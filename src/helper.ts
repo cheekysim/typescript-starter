@@ -6,8 +6,10 @@ function goodbye() {
     console.log('Goodbye World');
 }
 
-export { hello, goodbye };
+// Allows for { hello, goodbye } to be imported
+export { hello, goodbye }; 
 
+// Allows for default import ( helper.hello() )
 export default {
     hello,
     goodbye
