@@ -8,15 +8,16 @@
         "clean": "rimraf dist",
         "lint": "eslint . --ext .ts",
         "lint:fix": "eslint . --ext .ts --fix",
+        "pretty": "npx prettier -w ./src",
         "build": "tsc",
         "start": "node .",
         "watch": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && ts-node ./src/index.ts\"",
-        "watch:build": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && npm run build && npm run start\"",
-        "watch:lint": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix\"",
+        "watch:build": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty && npm run build && npm run start\"",
+        "watch:lint": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty\"",
         "dev": "npm-run-all clean build watch",
         "dev:build": "npm-run-all clean watch:build",
         "dev:lint": "npm-run-all clean watch:lint",
-        "prod": "npm-run-all clean lint build start"
+        "prod": "npm-run-all clean lint pretty build start"
     },
     "repository": {
         "type": "git",
@@ -67,7 +68,7 @@
             ],
             "linebreak-style": [
                 "error",
-                "windows"
+                "unix"
             ],
             "quotes": [
                 "error",
