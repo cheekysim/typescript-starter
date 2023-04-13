@@ -1,0 +1,7 @@
+{
+  "verboose": true,
+  "ignore": ["node_modules", "dist"],
+  "watch": ["src"],
+  "ext": "ts,json",
+  "exec": "npm run lint:fix"
+}
