@@ -47,7 +47,7 @@
     },
     "eslintConfig": {
         "env": {
-            "browser": false,
+            "node": true,
             "es2020": true
         },
         "extends": [
