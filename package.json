@@ -11,9 +11,9 @@
         "pretty": "npx prettier -w ./src",
         "build": "tsc",
         "start": "node .",
-        "watch": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && ts-node ./src/index.ts\"",
-        "watch:build": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty && npm run build && npm run start\"",
-        "watch:lint": "nodemon --verboose --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty\"",
+        "watch": "nodemon --ext ts,json --watch src --exec \"npm run lint:fix && ts-node ./src/index.ts\"",
+        "watch:build": "nodemon --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty && npm run build && npm run start\"",
+        "watch:lint": "nodemon --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty\"",
         "dev": "npm-run-all clean build watch",
         "dev:build": "npm-run-all clean watch:build",
         "dev:lint": "npm-run-all clean watch:lint",
@@ -40,7 +40,7 @@
     },
     "prettier": {
         "singleQuote": true,
-        "trailingComma": "all",
+        "trailingComma": "none",
         "tabWidth": 4,
         "useTabs": false,
         "semi": true
@@ -79,6 +79,15 @@
             "semi": [
                 "error",
                 "always"
+            ],
+            "no-trailing-spaces": [
+                "error"
+            ],
+            "no-multiple-empty-lines": [
+                "error",
+                {
+                    "max": 2
+                }
             ]
         }
     }
