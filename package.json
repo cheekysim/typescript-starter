@@ -15,7 +15,8 @@
         "watch:build": "nodemon --ext ts,json --watch src --exec \"rpm run clean && npm run lint:fix && npm run pretty && npm run build && npm run start\"",
         "watch:lint": "nodemon --ext ts,json --watch src --exec \"npm run lint:fix && npm run pretty\"",
         "dev": "npm-run-all clean build watch",
-        "prod": "npm-run-all clean lint pretty build start"
+        "prod": "npm-run-all clean lint pretty build start",
+        "test": "ts-node ./src/index.ts"
     },
     "repository": {
         "type": "git",
